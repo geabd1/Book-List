@@ -1,16 +1,18 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class user{
+public class User{
 
     private String name;
     private String id;
+    private String password;
     private List<String> borrowedBooks;
     private List<String> readingHistory;
 
-    public user(String name, String id){
+    public User(String name, String id, String password){
         this.name = name;
         this.id = id;
+        this.password = password;
         this.borrowedBooks = new ArrayList<>();
         this.readingHistory = new ArrayList<>();
     }
@@ -35,6 +37,12 @@ public class user{
         this.id = id;
 
     }
+    public void setPassword(String password){
+        this.password = password;
+    }
+    public String getPassword(){
+        return password;
+    }
     public void setBorrowedBooks(List<String> borrowedBooks){
         this.borrowedBooks = borrowedBooks;
     }
@@ -49,5 +57,12 @@ public class user{
     public void returnBook(String bookId) {
         borrowedBooks.remove(bookId);
         readingHistory.add(bookId);
+    }
+
+    public void showBorrowedBooks() {
+        System.out.println("Borrowed Books:");
+        for (String bookId : borrowedBooks) {
+            System.out.println(bookId);
+        }
     }
 }

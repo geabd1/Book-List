@@ -2,29 +2,26 @@ import java.util.ArrayList;
 import java.util.List;
 //import java.util.Scanner;
 
-public class book {
+public class Book {
     private String id;
     private String bookName;
     private String genre;
     private String author;
-    private String status; //reading, want to, read
     private boolean isAvailable;
     private int totalPageCount;
     private int currentPage;
     private int rating;
-    private List<review> review;
+
     
-    public book(String id, String bookName, String genre, 
-    String author,String status, int totalPageCount, int rating){
+    public Book(String id, String bookName, String genre, 
+    String author, int totalPageCount, int rating){
         this.id = id;
         this.bookName = bookName;
         this.genre = genre;
         this.author = author;
-        this.status = status;
         this.isAvailable = true;
         this.totalPageCount = totalPageCount;
         this.currentPage = 0;
-        this.review = new ArrayList<>();
     }
 
     // Getters and Setters
@@ -60,14 +57,6 @@ public class book {
         this.author = author;
     }
     
-    public String getStatus() {
-        return status;
-    }
-    
-    public void setStatus(String status) {
-        this.status = status;
-    }
-    
     public boolean isAvailable() {
         return isAvailable;
     }
@@ -100,11 +89,5 @@ public class book {
         this.rating = rating;
     }
     
-    public List<review> getReview() {
-        return review;
-    }
     
-    public void setReview(List<review> review) {
-        this.review = review;
-    }
 }
